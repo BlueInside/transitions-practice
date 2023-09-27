@@ -1,6 +1,9 @@
-const f = document.getElementById('foo');
+const animateBtn = document.getElementById('animate');
+const container = document.querySelector('.container');
+animateBtn.onclick = () => {
+  container.classList.add('animated');
+};
 
-document.addEventListener('click', (e) => {
-  f.style.transform = `translateY(${e.clientY - 25}px)`;
-  f.style.transform += `translateX(${e.clientX - 25}px)`;
+container.addEventListener('animationend', (e) => {
+  container.classList.remove('animated');
 });
